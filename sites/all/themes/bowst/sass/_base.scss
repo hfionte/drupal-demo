@@ -1,0 +1,244 @@
+/* Base styles for responsive example site.
+==================================================== */
+
+// Apply a natural box layout model to all elements
+// http://paulirish.com/2012/box-sizing-border-box-ftw/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body, html {
+	background: #efefef;
+	color: $black;
+	font-family: 'Open Sans', sans-serif;
+}
+a {
+	color: $main;
+	text-decoration: none;
+	&:hover {
+		color: $maindark;
+	}
+}
+h1 {
+	color: $main;
+	margin: 0;
+	font-weight: 300;
+	font-size: 50px;
+}
+h2 {
+	margin-bottom: 0;
+	font-weight: 300;
+	font-size: 40px;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+h3 {
+	font-weight: 300;
+	font-size: 28px;
+	margin-bottom: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+	padding: 5px 8px;
+	border: 1px solid #999;
+	width: 100%;
+}
+code {
+	color: $main;
+}
+#page-wrapper, #footer {
+	width: 100%;
+	max-width: 1260px;
+	margin: 0 auto;
+	background: #fff;
+	-webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .3);
+	box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .3);
+}
+#header {
+	padding: 20px 0 0 0;
+	border-top: 8px solid #2d2d2d;
+	h1 {
+		margin: 0 0 20px 100px;
+	}
+	#logo {
+		float: right;
+		margin: 10px 100px 0 0;
+	}
+}
+
+#footer {
+	background: #303030;
+	color: #666;
+	padding: 20px 100px;
+	text-align: right;
+	font-size: 80%;
+	a {
+		color: #fff;
+		&:hover { color: #ccc; }
+	}
+}
+
+// Main navigation
+#navigation {
+	#block-system-main-menu ul.menu {
+		margin: 0;
+		padding: 0 100px;
+		background: $main;
+		@extend .clearfix;
+		li {
+			display: block;
+			float: left;
+			border-right: 1px solid $maindark;
+			margin: 0;
+			padding: 0;
+			&:first-child {
+				border-left: 1px solid $maindark;
+			}
+			a {
+				padding: 10px 30px;
+				display: inline-block;
+				color: #fff;
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+			}
+			ul {
+				display: none;
+			}
+			&:hover {
+				background: $maindark;
+				ul {
+					display: block;
+					position: absolute;
+					z-index: 100;
+					background: $maindark;
+					margin: 0;
+					padding: 0;
+				}
+				li {
+					display: block;
+					float: none;
+					border: 0;
+					border-top: 1px solid $main;
+					&:last-child {
+						border-bottom: 1px solid $main;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Main content
+#main {
+	padding: 20px 100px 50px 100px;
+	.node>.content {
+		border-bottom: 1px solid $main;
+		margin-bottom: 40px;
+		padding-bottom: 30px;
+	}
+}
+.one-sidebar.sidebar-second {
+	#content {
+		width: 66%;
+		float: left;
+	}
+	#sidebar-second {
+		width: 30%;
+		float: right;
+		background: #eee;
+		padding: 15px 20px 20px 20px;
+		border: 1px solid #ddd;
+		h2 {
+			font-size: 30px;
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ccc;
+		}
+	}
+}
+.feed-icon {
+	display: none;
+}
+.filter-wrapper {
+	display: none;
+}
+.views-label {
+	font-weight: bold;
+}
+ul.links.inline {
+	display: block;
+	margin: 20px 0;
+	li.first {
+		padding-left: 0;
+	}
+}
+
+// Comments
+#comments {
+	ul.links.inline {
+		margin: 10px 0;
+		padding: 0 0 10px 0;
+		border-top: 0;
+		border-bottom: 0;
+		li.first {
+			padding-left: 0;
+		}
+	}
+	.comment {
+		border-bottom: 1px solid #ccc;
+	}
+	.submitted {
+		color: #aaa;
+		.permalink {
+			display: none;
+		}
+		.username {
+			color: $black;
+		}
+	}
+}
+#edit-submit, #edit-preview {
+	background: $main;
+	border: 1px solid $maindark;
+	padding: 10px 20px;
+	color: #fff;
+	margin-right: 20px;
+}
+#edit-preview {
+	background: #ccc;
+	border: 1px solid #aaa;
+	color: #777;
+}
+li.comment-add {
+	a, a.active {
+		background: #eee;
+		border: 1px solid #ccc;
+		color: #777;
+		display: inline-block;
+		padding: 5px 10px;
+	}
+}
+
+.view-circus-mice {
+	.views-field-field-image {
+		float: left;
+		padding: 0px 20px 20px 0;
+	}
+	.views-field-field-bio {
+		p { margin: 0; }
+	}
+	.views-row {
+		@extend .clearfix;
+	}
+	h3 {
+		&:after {
+			content: "s";
+		}
+	}
+}
+
+// Columns
+.columns {
+	@extend .clearfix;
+}
