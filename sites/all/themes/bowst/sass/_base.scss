@@ -217,6 +217,8 @@ ul.links.inline {
 }
 #content img.media-image {
 	padding: 0 20px 20px 0;
+	max-width: 100%;
+	height: auto !important;
 }
 
 // Comments
