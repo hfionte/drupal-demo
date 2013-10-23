@@ -44,7 +44,7 @@ input[type="number"],
 textarea {
 	padding: 5px 8px;
 	border: 1px solid #999;
-	width: 100%;
+	//width: 100%;
 }
 code {
 	color: $main;
@@ -209,6 +209,9 @@ ul.links.inline {
 	li.first {
 		padding-left: 0;
 	}
+}
+#content img.media-image {
+	padding: 0 20px 20px 0;
 }
 
 // Comments

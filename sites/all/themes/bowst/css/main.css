@@ -118,8 +118,7 @@ input[type="password"],
 input[type="number"],
 textarea {
   padding: 5px 8px;
-  border: 1px solid #999;
-  width: 100%; }
+  border: 1px solid #999; }
 
 code {
   color: #008ab3; }
@@ -252,6 +251,9 @@ ul.links.inline {
   margin: 20px 0; }
   ul.links.inline li.first {
     padding-left: 0; }
+
+#content img.media-image {
+  padding: 0 20px 20px 0; }
 
 #comments ul.links.inline {
   margin: 10px 0;
