@@ -83,7 +83,7 @@ textarea {
   box-sizing: border-box; }
 
 body, html {
-  background: #efefef;
+  background: #eeeeee;
   color: #3b3c41;
   font-family: 'Open Sans', sans-serif; }
 
@@ -109,7 +109,8 @@ h2 {
 h3 {
   font-weight: 300;
   font-size: 28px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-top: .5em; }
 
 input[type="text"],
 input[type="email"],
@@ -135,15 +136,15 @@ code {
   padding: 20px 0 0 0;
   border-top: 8px solid #2d2d2d; }
   #header h1 {
-    margin: 0 0 20px 100px; }
+    margin: 0 0 20px 50px; }
   #header #logo {
     float: right;
-    margin: 10px 100px 0 0; }
+    margin: 10px 50px 0 0; }
 
 #footer {
-  background: #303030;
+  background: #3b3c41;
   color: #666;
-  padding: 20px 100px;
+  padding: 20px 50px;
   text-align: right;
   font-size: 80%; }
   #footer a {
@@ -151,9 +152,53 @@ code {
     #footer a:hover {
       color: #ccc; }
 
+table {
+  width: 100%;
+  margin: 1em 0; }
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #008ab3;
+  color: #fff;
+  border: 1px solid #006383; }
+
+body.one-sidebar.sidebar-first #content {
+  width: 74%;
+  float: right; }
+
+body.one-sidebar.sidebar-second #content {
+  width: 74%;
+  float: left; }
+
+body.two-sidebars #content {
+  width: 48%;
+  float: left;
+  margin-left: 2%; }
+
+#sidebar-first, #sidebar-second {
+  width: 24%;
+  background: #fff;
+  padding: 15px 20px 20px 20px;
+  border: 1px solid #ddd; }
+  #sidebar-first h2, #sidebar-second h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc; }
+
+#sidebar-first {
+  float: left; }
+
+#sidebar-second {
+  float: right; }
+
+#mobile-menu-trigger {
+  display: none; }
+
 #navigation #block-system-main-menu ul.menu {
   margin: 0;
-  padding: 0 100px;
+  padding: 0 50px;
   background: #008ab3; }
   #navigation #block-system-main-menu ul.menu li {
     display: block;
@@ -188,26 +233,10 @@ code {
           border-bottom: 1px solid #008ab3; }
 
 #main {
-  padding: 20px 100px 50px 100px; }
+  padding: 20px 50px 50px 50px; }
   #main .node > .content {
     border-bottom: 1px solid #008ab3;
-    margin-bottom: 40px;
-    padding-bottom: 30px; }
-
-.one-sidebar.sidebar-second #content {
-  width: 66%;
-  float: left; }
-.one-sidebar.sidebar-second #sidebar-second {
-  width: 30%;
-  float: right;
-  background: #eee;
-  padding: 15px 20px 20px 20px;
-  border: 1px solid #ddd; }
-  .one-sidebar.sidebar-second #sidebar-second h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc; }
+    margin-bottom: 40px; }
 
 .feed-icon {
   display: none; }
@@ -259,14 +288,46 @@ li.comment-add a, li.comment-add a.active {
   display: inline-block;
   padding: 5px 10px; }
 
-.view-circus-mice .views-field-field-image {
-  float: left;
-  padding: 0px 20px 20px 0; }
-.view-circus-mice .views-field-field-bio p {
-  margin: 0; }
-.view-circus-mice h3:after {
-  content: "s"; }
+@media (max-width: 850px) {
+  #sidebar-first,
+  #sidebar-second,
+  body.one-sidebar.sidebar-first #content,
+  body.one-sidebar.sidebar-second #content,
+  body.two-sidebars #content {
+    float: none;
+    width: 100%; }
 
+  #mobile-menu-trigger {
+    display: block;
+    background: url(../img/menu-icon.png) 96% center no-repeat #008ab3;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #006383;
+    color: #fff;
+    font-size: 28px; }
+
+  #navigation #block-system-main-menu ul.menu {
+    height: 0;
+    padding: 0;
+    border-top: 5px solid #008ab3;
+    overflow: hidden; }
+    #navigation #block-system-main-menu ul.menu.mobile-open {
+      height: auto;
+      border-top: 5px solid #006383; }
+    #navigation #block-system-main-menu ul.menu li, #navigation #block-system-main-menu ul.menu li:first-child {
+      float: none;
+      border: 0;
+      border-bottom: 1px solid #006383;
+      padding: 10px 40px; }
+      #navigation #block-system-main-menu ul.menu li:hover, #navigation #block-system-main-menu ul.menu li:first-child:hover {
+        background: #006383; }
+        #navigation #block-system-main-menu ul.menu li:hover ul, #navigation #block-system-main-menu ul.menu li:first-child:hover ul {
+          position: static; }
+          #navigation #block-system-main-menu ul.menu li:hover ul li, #navigation #block-system-main-menu ul.menu li:first-child:hover ul li {
+            padding-left: 20px; }
+            #navigation #block-system-main-menu ul.menu li:hover ul li:before, #navigation #block-system-main-menu ul.menu li:first-child:hover ul li:before {
+              content: "> ";
+              color: #fff; } }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -336,24 +397,23 @@ li.comment-add a, li.comment-add a.active {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-.clearfix:before, #navigation #block-system-main-menu ul.menu:before, .view-circus-mice .views-row:before, .columns:before,
+.clearfix:before, .columns:before, #navigation #block-system-main-menu ul.menu:before,
 .clearfix:after,
-#navigation #block-system-main-menu ul.menu:after,
-.view-circus-mice .views-row:after,
-.columns:after {
+.columns:after,
+#navigation #block-system-main-menu ul.menu:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */ }
 
-.clearfix:after, #navigation #block-system-main-menu ul.menu:after, .view-circus-mice .views-row:after, .columns:after {
+.clearfix:after, .columns:after, #navigation #block-system-main-menu ul.menu:after {
   clear: both; }
 
 /*
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-.clearfix, #navigation #block-system-main-menu ul.menu, .view-circus-mice .views-row, .columns {
+.clearfix, .columns, #navigation #block-system-main-menu ul.menu {
   *zoom: 1; }
 
 /* ==========================================================================
