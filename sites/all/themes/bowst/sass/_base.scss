@@ -5,6 +5,11 @@
 // http://paulirish.com/2012/box-sizing-border-box-ftw/
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+// Hide error messages (for demo)
+.messages.error {
+	display: none;
+}
+
 body, html {
 	background: $gray;
 	color: $black;

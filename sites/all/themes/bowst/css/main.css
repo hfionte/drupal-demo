@@ -82,6 +82,9 @@ textarea {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.messages.error {
+  display: none; }
+
 body, html {
   background: #eeeeee;
   color: #3b3c41;
